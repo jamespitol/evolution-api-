@@ -26,10 +26,11 @@ FROM n8nio/n8n:latest
 
 USER root
 
-RUN apk add --no-cache ffmpeg
+# Add all your packages here
+RUN apk update && \
+    apk add --no-cache ffmpeg
 
 USER node
-
 
 # Expondo a porta da aplicação
 EXPOSE 8080
