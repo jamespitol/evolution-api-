@@ -22,6 +22,15 @@ ENV AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY} \
     REDIS_PORT=${REDIS_PORT} \
     REDIS_PASSWORD=${REDIS_PASSWORD}
 
+FROM n8nio/n8n:latest
+
+USER root
+
+RUN apk add --no-cache ffmpeg
+
+USER node
+
+
 # Expondo a porta da aplicação
 EXPOSE 8080
 
